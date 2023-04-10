@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <div className='w-full bg-gray-100'>
-            <div className='hidden container py-12 mx-auto lg:flex justify-between items-center'>
+            <div className='hidden my-container py-12 lg:flex justify-between items-center'>
                 <Link className='font-bold text-3xl ' to="/">Iconic-Job</Link>
                 <ul className='flex gap-8'>
                     <li className='default'><NavLink to="/" className={({ isActive }) =>

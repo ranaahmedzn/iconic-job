@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* Common css */
+.my-container{
+    @apply container mx-auto px-10
+}
 .btn-primary{
     @apply px-5 py-3 text-white text-lg font-semibold rounded bg-gradient-to-r from-indigo-400 to-violet-400 rounded-lg
 }
