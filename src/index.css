@@ -4,7 +4,7 @@
 
 /* Common css */
 .my-container{
-    @apply container mx-auto px-10
+    @apply container mx-auto px-4 lg:px-10
 }
 .btn-primary{
     @apply px-5 text-white text-lg font-semibold rounded-lg bg-gradient-to-r from-indigo-400 to-violet-400

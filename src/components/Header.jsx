@@ -67,7 +67,7 @@ const Header = () => {
                         : ""
                     }>Blog</NavLink></li>
                     <li>
-                        <button className='btn-primary'>Start Applying</button>
+                        <button className='btn-primary py-3'>Start Applying</button>
                     </li>
                 </ul>
 
