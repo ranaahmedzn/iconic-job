@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "company_logo": "https://i.ibb.co/sygHjp9/Google.png",
+        "job_title": "Software Engineer",
+        "company_name": "Example Inc.",
+        "job_type": "Remote",
+        "location": "Anywhere",
+        "job_duration": "Full-time",
+        "salary": "$100,000 - $120,000",
+        "job_description": "Example Inc. is seeking a highly skilled software engineer to join our team. The ideal candidate will have a strong background in computer science, as well as experience with the latest programming languages and technologies.",
+        "job_responsibility": "Responsibilities include designing, developing, and testing software applications, as well as collaborating with other team members to ensure the best possible product.",
+        "educational_requirements": "Bachelor's degree in Computer Science or related field.",
+        "experiences": "Minimum of 3 years experience in software engineering.",
+        "contact_information": {
+            "phone": "123-456-7890",
+            "email": "jobs@example.com"
+        }
+    },
+    {
+        "id": 2,
+        "company_logo": "https://i.ibb.co/sygHjp9/Google.png",
+        "job_title": "Graphic Designer",
+        "company_name": "Example Corp.",
+        "job_type": "Onsite",
+        "location": "New York, NY",
+        "job_duration": "Part-time",
+        "salary": "$30 - $50 per hour",
+        "job_description": "Example Corp. is seeking a talented graphic designer to help us with our marketing and advertising materials.",
+        "job_responsibility": "Responsibilities include designing and creating marketing and advertising materials, as well as collaborating with other team members to ensure the best possible product.",
+        "educational_requirements": "Associate's degree in Graphic Design or related field.",
+        "experiences": "Minimum of 2 years experience in graphic design.",
+        "contact_information": {
+            "phone": "555-123-4567",
+            "email": "designjobs@example.com"
+        }
+    },
+    {
+        "id": 3,
+        "company_logo": "https://i.ibb.co/sygHjp9/Google.png",
+        "job_title": "Marketing Manager",
+        "company_name": "Marketing Co.",
+        "job_type": "Onsite",
+        "location": "San Francisco, CA",
+        "job_duration": "Full-time",
+        "salary": "$80,000 - $100,000",
+        "job_description": "Marketing Co. is seeking an experienced marketing manager to help us develop and execute marketing strategies for our clients.",
+        "job_responsibility": "Responsibilities include developing marketing strategies, managing marketing campaigns, and collaborating with clients and other team members to achieve marketing goals.",
+        "educational_requirements": "Bachelor's degree in Marketing or related field.",
+        "experiences": "Minimum of 5 years experience in marketing management.",
+        "contact_information": {
+            "phone": "555-987-6543",
+            "email": "marketingjobs@example.com"
+        }
+    },
+    {
+        "id": 4,
+        "company_logo": "https://i.ibb.co/sygHjp9/Google.png",
+        "job_title": "Web Developer",
+        "company_name": "Web Co.",
+        "job_type": "Onsite",
+        "location": "Austin, TX",
+        "job_duration": "Full-time",
+        "salary": "$60,000 - $80,000",
+        "job_description": "Web Co. is seeking a talented web developer to join our team. The ideal candidate will have experience with both front-end and back-end web development, as well as a passion for creating beautiful and functional websites.",
+        "job_responsibility": "Responsibilities include designing and developing websites, as well as collaborating with other team members to ensure the best possible user experience.",
+        "educational_requirements": "Bachelor's degree in Computer Science or related field.",
+        "experiences": "Minimum of 2 years experience in web development.",
+        "contact_information": {
+            "phone": "555-555-5555",
+            "email": "webjobs@example.com"
+        }
+    },
+    {
+        "id": 5,
+        "company_logo": "https://i.ibb.co/sygHjp9/Google.png",
+        "job_title": "Content Writer",
+        "company_name": "Content Co.",
+        "job_type": "Remote",
+        "location": "Anywhere",
+        "job_duration": "Part-time",
+        "salary": "$20 - $30 per hour",
+        "job_description": "Content Co. is seeking a talented content writer to help us create engaging and informative content for our clients.",
+        "job_responsibility": "Responsibilities include writing blog posts, articles, and other content, as well as collaborating with clients and other team members to ensure the best possible product.",
+        "educational_requirements": "Bachelor's degree in English, Journalism, or related field.",
+        "experiences": "Minimum of 1 year experience in content writing.",
+        "contact_information": {
+            "phone": "555-123-4567",
+            "email": "contentjobs@example.com"
+        }
+    },
+    {
+        "id": 6,
+        "company_logo": "https://i.ibb.co/sygHjp9/Google.png",
+        "job_title": "Sales Representative",
+        "company_name": "Sales Co.",
+        "job_type": "Onsite",
+        "location": "Chicago, IL",
+        "job_duration": "Full-time",
+        "salary": "$50,000 - $70,000",
+        "job_description": "Sales Co. is seeking a highly motivated sales representative to join our team. The ideal candidate will have excellent communication and interpersonal skills, as well as a passion for sales.",
+        "job_responsibility": "Responsibilities include prospecting and qualifying leads, conducting sales presentations, and closing deals.",
+        "educational_requirements": "Bachelor's degree in Business or related field.",
+        "experiences": "Minimum of 2 years experience in sales.",
+        "contact_information": {
+            "phone": "555-987-6543",
+            "email": "salesjobs@example.com"
+        }
+    }
+]
