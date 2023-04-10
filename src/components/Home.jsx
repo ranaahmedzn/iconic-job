@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bannerImg from '../assets/banner-img.png'
 import { useLoaderData } from 'react-router-dom';
 import Category from './Category';
@@ -7,6 +7,8 @@ import FeaturedJob from './FeaturedJob';
 const Home = () => {
     const [jobCategories, featuredJobs] = useLoaderData()
     // console.log(jobCategories, featuredJobs)
+
+    const [jobs, setJobs] = useState(featuredJobs.slice(0, 4))
 
     return (
         <main>
@@ -51,14 +53,18 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6 my-8'>
                     {
-                        featuredJobs.slice(0, 4).map(job => <FeaturedJob
+                        jobs.map(job => <FeaturedJob
                         key={job.id}
                         job={job}
                         ></FeaturedJob>)
                     }
                 </div>
                 <div className='text-center'>
-                    <button className='btn-primary py-3'>See All Jobs</button>
+                    {
+                        jobs.length < 6
+                        ? <button onClick={() => setJobs(featuredJobs)} className='btn-primary py-3'>See All Jobs</button>
+                        : <button onClick={() => setJobs(featuredJobs.slice(0, 4))} className='btn-primary py-3'>See Less</button>
+                    }
                 </div>
             </section>
         </main>
