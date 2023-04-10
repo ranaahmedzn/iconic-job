@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Common css */
+.btn-primary{
+    @apply px-5 py-3 text-white text-lg font-semibold rounded bg-gradient-to-r from-indigo-400 to-violet-400 rounded-lg
+}
+.default{
+    @apply text-base font-semibold text-gray-500
+}
+.active{
+    @apply bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent
+}
