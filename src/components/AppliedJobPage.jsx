@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import vector from '../assets/Vector.png'
 import vector1 from '../assets/Vector-1.png'
 import { JobsContext } from '../App';
@@ -6,6 +6,17 @@ import AppliedJob from './AppliedJob';
 
 const AppliedJobPage = () => {
     const [jobs, setJobs] = useContext(JobsContext)
+
+    const [selectedValue, setSelectedValue] = useState("");
+
+    function handleFilterByJobType(event) {
+        const value = event.target.value;
+        setSelectedValue(value);
+
+        // Filter the dataArray based on the selected value
+        const filteredJobs = jobs.filter(job => job.job_type == value);
+        setJobs(filteredJobs);
+    }
 
     return (
         <div className=''>
@@ -20,12 +31,10 @@ const AppliedJobPage = () => {
             <div className='my-container py-24'>
                 <div className='flex justify-end'>
                                     
-                    <select class="bg-gray-50 border border-gray-300 font-bold text-base text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-fit p-3">
-                    <option selected>Filter By</option>
-                    <option value="US">United States</option>
-                    <option value="CA">Canada</option>
-                    <option value="FR">France</option>
-                    <option value="DE">Germany</option>
+                    <select onChange={handleFilterByJobType} value={selectedValue} className="bg-gray-50 border border-gray-300 font-bold text-base text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-fit p-3">
+                        <option value="">Filter By</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Onsite">Onsite</option>
                     </select>
 
                 </div>
