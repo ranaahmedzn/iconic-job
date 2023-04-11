@@ -15,7 +15,7 @@ const Home = () => {
             <section className='w-full bg-gray-100 overflow-hidden'>
                 <div className='my-container flex flex-col lg:flex-row gap-16 justify-between items-center'>
                     <div className='mt-8 lg:mt-0 w-full lg:w-1/2'>
-                        <h1 className='font-bold text-5xl lg:text-7xl leading-[60px] lg:leading-[80px]'>One Step <br /> Closer To Your <br /> <span className='text-indigo-400'>Dream Job</span></h1>
+                        <h1 className='font-bold text-5xl lg:text-7xl leading-[60px] lg:leading-[80px]'>One Step <br /> Closer To Your <br /> <span className='title-text'>Dream Job</span></h1>
                         <p className='text-gray-600 my-6 w-full lg:w-3/4'>Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
                         <button className='btn-primary py-3'>Get Started</button>
                     </div>

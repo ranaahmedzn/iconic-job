@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CurrencyDollarIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 const FeaturedJob = ({job}) => {
     const {id, company_logo, job_title, company_name, job_type, job_duration, location, salary} = job;
 
     return (
         <div className='border border-gray-200 rounded-lg p-10'>
-            <img src={company_logo} alt="" />
+            <div className='h-[60px]'>
+                <img className='h-full' src={company_logo} alt="" />
+            </div>
             <h3 className='text-3xl my-2 font-semibold'>{job_title}</h3>
             <h4 className='text-gray-500 text-lg font-medium'>{company_name}</h4>
             <div className='my-4'>
@@ -14,10 +17,12 @@ const FeaturedJob = ({job}) => {
                 <button className='btn-outlined'>{job_duration}</button>
             </div>
             <div className='flex gap-6 text-gray-500 text-lg font-medium'>
-                <p>
+                <p className='flex items-center'>
+                    <MapPinIcon className='icon-style' />
                     {location}
                 </p>
-                <p>
+                <p className='flex items-center'>
+                    <CurrencyDollarIcon className='icon-style' />
                     {salary}
                 </p>
             </div>

@@ -69,12 +69,12 @@ const JobDetails = () => {
                         <hr className='border-1 border-gray-300' />
                         <div className='space-y-3'>
                             <p className='text-gray-600'>
-                                <CurrencyDollarIcon className='icon-style' />
+                                <CurrencyDollarIcon className='icon-style2' />
                                 <span className='font-bold text-gray-700'>Salary : </span>
-                                {salary} (Per Month)
+                                {salary}
                             </p>
                             <p className='text-gray-600'>
-                                <CalendarDaysIcon className='icon-style' />
+                                <CalendarDaysIcon className='icon-style2' />
                                 <span className='font-bold text-gray-700'>Job Title : </span>
                                 {job_title}
                             </p>
@@ -83,17 +83,17 @@ const JobDetails = () => {
                         <hr className='border-1 border-gray-300' />
                         <div className='space-y-3'>
                             <p className='text-gray-600'>
-                                <PhoneIcon className='icon-style' />
+                                <PhoneIcon className='icon-style2' />
                                 <span className='font-bold text-gray-700'>Phone : </span>
                                 {contact_information.phone}
                             </p>
                             <p className='text-gray-600'>
-                                <EnvelopeIcon className='icon-style' />
+                                <EnvelopeIcon className='icon-style2' />
                                 <span className='font-bold text-gray-700'>Email : </span>
                                 {contact_information.email}
                             </p>
                             <p className='text-gray-600'>
-                                <MapPinIcon className='icon-style' />
+                                <MapPinIcon className='icon-style2' />
                                 <span className='font-bold text-gray-700'>Address : </span>
                                 {location}
                             </p>

@@ -13,8 +13,8 @@ const AppliedJobPage = () => {
         const value = event.target.value;
         setSelectedValue(value);
 
-        // Filter the dataArray based on the selected value
-        const filteredJobs = jobs.filter(job => job.job_type == value);
+        // Filter the jobs array based on the selected value
+        const filteredJobs = jobs.filter(job => job.job_type === value);
         setJobs(filteredJobs);
     }
 
@@ -46,6 +46,10 @@ const AppliedJobPage = () => {
                         ></AppliedJob>)
                     }
                 </div>
+                {
+                    jobs.length > 0 ? ""
+                    : <h3 className='text-center font-bold text-3xl'>There is no Applied Job!!</h3>
+                }
             </div>
         </div>
     );

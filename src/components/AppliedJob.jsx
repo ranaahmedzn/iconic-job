@@ -1,4 +1,5 @@
 import React from 'react';
+import { CurrencyDollarIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { Link } from 'react-router-dom';
 
 const AppliedJob = ({job}) => {
@@ -17,10 +18,12 @@ const AppliedJob = ({job}) => {
                     <button className='btn-outlined'>{job_duration}</button>
                 </div>
                 <div className='flex gap-6 text-gray-500 text-lg font-medium'>
-                    <p>
+                    <p className='flex items-center'>
+                        <MapPinIcon className='icon-style' />
                         {location}
                     </p>
-                    <p>
+                    <p className='flex items-center'>
+                        <CurrencyDollarIcon className='icon-style' />
                         {salary}
                     </p>
                 </div>
