@@ -6,8 +6,8 @@ const AppliedJob = ({job}) => {
     const {id, company_logo, job_title, company_name, job_type, job_duration, location, salary} = job;
 
     return (
-        <div className='border border-gray-200 flex gap-8 items-center rounded-lg p-8'>
-            <div className='bg-gray-200 w-[220px] h-[220px] flex justify-center items-center rounded-lg'>
+        <div className='border border-gray-200 flex flex-col md:flex-row gap-8 items-center rounded-lg p-8'>
+            <div className='bg-gray-200 w-full md:w-[220px] h-[220px] flex justify-center items-center rounded-lg'>
                 <img src={company_logo} alt="" />
             </div>
             <div>
@@ -17,7 +17,7 @@ const AppliedJob = ({job}) => {
                     <button className='btn-outlined'>{job_type}</button>
                     <button className='btn-outlined'>{job_duration}</button>
                 </div>
-                <div className='flex gap-6 text-gray-500 text-lg font-medium'>
+                <div className='flex flex-col md:flex-row gap-6 text-gray-500 text-lg font-medium'>
                     <p className='flex items-center'>
                         <MapPinIcon className='icon-style' />
                         {location}

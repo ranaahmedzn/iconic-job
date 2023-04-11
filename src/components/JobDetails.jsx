@@ -35,12 +35,12 @@ const JobDetails = () => {
 
     return (
         <div>
-            <div className='bg-gray-100 relative'>
+            <div className='bg-gray-100 md:relative'>
                 <div className='my-container pt-12 pb-28 text-center'>
                     <h2 className='font-bold text-3xl'>Job Details</h2>
                 </div>
-                <img className='absolute bottom-0 left-0 w-72' src={vector} alt="" />
-                <img className='absolute -top-36 right-0 w-72' src={vector1} alt="" />
+                <img className='hidden md:block absolute bottom-0 left-0 w-72' src={vector} alt="" />
+                <img className='hidden md:block absolute -top-36 right-0 w-72' src={vector1} alt="" />
             </div>
 
             <div className='my-container py-20 grid gap-5 grid-cols-1 lg:grid-cols-3'>

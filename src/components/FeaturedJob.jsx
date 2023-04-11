@@ -16,7 +16,7 @@ const FeaturedJob = ({job}) => {
                 <button className='btn-outlined'>{job_type}</button>
                 <button className='btn-outlined'>{job_duration}</button>
             </div>
-            <div className='flex gap-6 text-gray-500 text-lg font-medium'>
+            <div className='flex flex-col md:flex-row gap-6 text-gray-500 text-lg font-medium'>
                 <p className='flex items-center'>
                     <MapPinIcon className='icon-style' />
                     {location}
