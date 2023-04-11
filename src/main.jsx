@@ -9,11 +9,13 @@ import {
 import Home from './components/Home';
 import getJobCategoriesAndFeaturedJobs from './loader/category&FeaturedJobs';
 import JobDetails from './components/JobDetails';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    loader: getJobCategoriesAndFeaturedJobs,
     children: [
       {
         path: '/',
@@ -30,5 +32,8 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <>
+    <RouterProvider router={router} />
+    <Toaster />
+  </>
 )

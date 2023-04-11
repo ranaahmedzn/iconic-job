@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { CurrencyDollarIcon, CalendarDaysIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import vector from '../assets/Vector.png'
 import vector1 from '../assets/Vector-1.png'
+import { JobsContext } from '../App';
+import { addToDb, getAppliedJobList } from '../Utilities/fakeDb';
+import { toast } from 'react-hot-toast';
 
 const JobDetails = () => {
-    const jobs = useLoaderData()
-    const params = useParams()
-    const job = jobs.find(job => job.id == params.id)
+    const [jobs, setJobs] = useContext(JobsContext)
 
-    const {id, job_title, location, salary, educational_requirements, job_description, job_responsibility, experiences, contact_information} = job;
-    console.log(job)
+    const featuredJobs = useLoaderData()
+    const params = useParams()
+
+    const job = featuredJobs.find(job => job.id == params.id)
+    const {job_title, location, salary, educational_requirements, job_description, job_responsibility, experiences, contact_information} = job;
+
+    useEffect(() => {
+        const appliedJobList = getAppliedJobList()
+        let appliedJobs = []
+
+        for(const id in appliedJobList){
+            const selectedJob = jobs.find(existingJob => existingJob.id == id)
+            if(selectedJob){
+                appliedJobs.push(selectedJob)
+            }
+        }
+        setJobs(appliedJobs)
+    }, [])
+
+    const handleApplyNow = (job) => {
+        let newJobs = [];
+        const exists = jobs.find(existingJob => existingJob.id === job.id)
+        if(!exists){
+            job.quantity = 1;
+            newJobs = [...jobs, job]
+
+            addToDb(job.id)
+            setJobs(newJobs)
+            toast.success("Successfully Applied!👍")
+        }
+        else{
+            toast.error("You have already applied in this job!🔥")
+        }
+    }
+
     return (
         <div>
             <div className='bg-gray-100 relative'>
@@ -77,7 +111,7 @@ const JobDetails = () => {
                             </p>
                         </div>
                     </div>
-                    <button className='w-full mt-6 py-3 text-white text-lg font-semibold rounded-lg bg-gradient-to-r from-indigo-400 to-violet-400'>Apply Now</button>
+                    <button onClick={() => handleApplyNow(job)} className='w-full mt-6 py-3 text-white text-lg font-semibold rounded-lg bg-gradient-to-r from-indigo-400 to-violet-400'>Apply Now</button>
                 </div>
             </div>
         </div>
