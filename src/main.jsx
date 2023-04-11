@@ -12,6 +12,7 @@ import JobDetails from './components/JobDetails';
 import { Toaster } from 'react-hot-toast';
 import AppliedJobPage from './components/AppliedJobPage';
 import ErrorPage from './components/ErrorPage';
+import Statistics from './components/Statistics';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: 'job/:id',
         element: <JobDetails />,
         loader: ({params}) => fetch('/featuredJobs.json')
+      },
+      {
+        path: 'statistics',
+        element: <Statistics />
       },
       {
         path: 'applied-jobs',
