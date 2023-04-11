@@ -6,9 +6,8 @@ import Footer from './components/Footer';
 export const JobsContext = createContext([])
 
 const App = () => {
-  const [jobCategories, featuredJobs] = useLoaderData()
-  const [jobs, setJobs] = useState(featuredJobs)
-  // console.log(jobs)
+  const [jobCategories, featuredJobs, appliedJobs] = useLoaderData()
+  const [jobs, setJobs] = useState(appliedJobs)
 
   return (
     <JobsContext.Provider value={[jobs, setJobs]}>

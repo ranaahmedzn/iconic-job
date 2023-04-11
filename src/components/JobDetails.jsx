@@ -16,19 +16,7 @@ const JobDetails = () => {
     const job = featuredJobs.find(job => job.id == params.id)
     const {job_title, location, salary, educational_requirements, job_description, job_responsibility, experiences, contact_information} = job;
 
-    useEffect(() => {
-        const appliedJobList = getAppliedJobList()
-        let appliedJobs = []
-
-        for(const id in appliedJobList){
-            const selectedJob = jobs.find(existingJob => existingJob.id == id)
-            if(selectedJob){
-                appliedJobs.push(selectedJob)
-            }
-        }
-        setJobs(appliedJobs)
-    }, [])
-
+    
     const handleApplyNow = (job) => {
         let newJobs = [];
         const exists = jobs.find(existingJob => existingJob.id === job.id)

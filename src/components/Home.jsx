@@ -6,7 +6,6 @@ import FeaturedJob from './FeaturedJob';
 
 const Home = () => {
     const [jobCategories, featuredJobs] = useLoaderData()
-    // console.log(jobCategories, featuredJobs)
 
     const [jobs, setJobs] = useState(featuredJobs.slice(0, 4))
 
