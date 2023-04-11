@@ -62,7 +62,7 @@ const Home = () => {
                     {
                         jobs.length < 6
                         ? <button onClick={() => setJobs(featuredJobs)} className='btn-primary py-3'>See All Jobs</button>
-                        : <button onClick={() => setJobs(featuredJobs.slice(0, 4))} className='btn-primary py-3'>See Less</button>
+                        : ""
                     }
                 </div>
             </section>

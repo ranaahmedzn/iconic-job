@@ -11,11 +11,13 @@ import getJobCategoriesAndFeaturedJobs from './loader/category&FeaturedJobs';
 import JobDetails from './components/JobDetails';
 import { Toaster } from 'react-hot-toast';
 import AppliedJobPage from './components/AppliedJobPage';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     loader: getJobCategoriesAndFeaturedJobs,
     children: [
       {
