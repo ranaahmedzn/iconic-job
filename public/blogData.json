@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "question": "When should you use context API?",
+        "answer": "The Context API is a most powerful feature in React. It allows us to share data between components avoiding props drilling. When It's come to work with many components we need to share data across multiple components at different levels of the component tree. In this case, we will use the React Context API instead of passing the data through all the components in between. Context API allows us to avoid the prop drilling. Using of context API keep our code more cleaner.",
+        "image": "https://i.ibb.co/xq9gD4P/context-api.jpg",
+        "author": "Mr. James",
+        "published_date": "07/04/2023"
+    },
+    {
+        "id": 2,
+        "question": "What is a custom hook?",
+        "answer": "Custom Hook is a JavaScript function which we create by ourselves, when we want to share  reuse logic across multiple components in our application. Custom hooks provide a clean and declarative way of implementing complex functionality. Custom hooks can be used to share common functionalities such as handling form inputs, API calls, setting up listeners, or any other custom logic that needs to be reused in your application.",
+        "image": "https://i.ibb.co/rbbVkDP/hooks.png",
+        "author": "Williamson",
+        "published_date": "10/04/2023"
+    },
+    {
+        "id": 3,
+        "question": "What is useRef?",
+        "answer": "useRef is a React hook that allows you to create a mutable reference to a value that persists across renders. This reference is implemented as an object with a .current property that can be used to store any mutable value, similar to an instance property on a class. A common use case is to access a child imperatively.",
+        "image": "https://i.ibb.co/Lrgv30k/useRef.png",
+        "author": "John Watson",
+        "published_date": "20/3/2023"
+    },
+    {
+        "id": 4,
+        "question": "What is useMemo?",
+        "answer": "The useMemo is a hook used in the functional component of react that returns a memoized value. We use this concept, whenever in the React component, the state and props do not change the component and the component does not re-render, it shows the same output. The useMemo hook is used to improve performance in our React application.",
+        "image": "https://i.ibb.co/cw3Sh30/useMemo.png",
+        "author": "Michael",
+        "published_date": "28/03/2023"
+    }
+]

@@ -19,7 +19,7 @@ const AppliedJobPage = () => {
     }
 
     return (
-        <div className=''>
+        <div>
             <div className='bg-gray-100 md:relative'>
                 <div className='my-container pt-12 pb-28 text-center'>
                     <h2 className='font-bold text-3xl'>Applied Jobs</h2>

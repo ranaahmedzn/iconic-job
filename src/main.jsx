@@ -13,6 +13,7 @@ import { Toaster } from 'react-hot-toast';
 import AppliedJobPage from './components/AppliedJobPage';
 import ErrorPage from './components/ErrorPage';
 import Statistics from './components/Statistics';
+import Blog from './components/BlogPage';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: 'applied-jobs',
         element: <AppliedJobPage />
+      },
+      {
+        path: 'blog',
+        element: <Blog />
       }
     ]
   }

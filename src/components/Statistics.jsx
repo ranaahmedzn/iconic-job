@@ -23,23 +23,21 @@ const Statistics = () => {
     ]
 
     return (
-        <div className='my-container bg-gray-100 font-bold w-full h-[calc(100vh-120px)] flex flex-col gap-6 justify-start items-center'>
+        <div className='bg-gray-100 font-bold w-full h-[calc(100vh-100px)] flex flex-col gap-6 justify-start items-center'>
             <h2 className='title-text text-4xl'>Assignment Marks Analysis</h2>
-            <ResponsiveContainer width="100%" height="80%">
-                <ComposedChart
-                    width={920}
-                    height={400}
-                    data={assignmentMarks}
-                >
-                    <CartesianGrid stroke="#ddd" />
-                    <XAxis dataKey="name" scale="auto" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="marks" barSize={40} fill="#828CF8" />
-                    <Line type="monotone" dataKey="marks" stroke="#ff7300" />
-                </ComposedChart>
-            </ResponsiveContainer>
+            <ComposedChart
+                width={920}
+                height={400}
+                data={assignmentMarks}
+            >
+                <CartesianGrid stroke="#ddd" />
+                <XAxis dataKey="name" scale="auto" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="marks" barSize={40} fill="#828CF8" />
+                <Line type="monotone" dataKey="marks" stroke="#ff7300" />
+            </ComposedChart>
 
         </div>
     );
