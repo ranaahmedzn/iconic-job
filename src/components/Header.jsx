@@ -45,7 +45,7 @@ const Header = () => {
                     }
                 </div>
 
-                <ul className={`flex flex-col absolute gap-8 py-8 px-6 ${isOpen ? 'top-[75px] left-0' : "top-[75px] -left-[1000px]"} duration-500 bg-gray-700 w-full`}>
+                <ul className={`flex flex-col z-50 absolute gap-8 py-8 px-6 ${isOpen ? 'top-[75px] left-0' : "top-[75px] -left-[1000px]"} duration-500 bg-gray-700 w-full`}>
                     <li className='default2'><NavLink to="/" className={({ isActive }) =>
                       isActive
                         ? "active"
