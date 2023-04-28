@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../providers/AuthProvider';
 import { toast } from 'react-hot-toast';
@@ -9,8 +9,8 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('')
-    const { createUser } = useContext(AuthContext)
-    const { updateUser } = useContext(AuthContext)
+    const { createUser, updateUser, emailVerification, googleLogin } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleSignUp = (event) => {
         event.preventDefault()
@@ -48,6 +48,10 @@ const SignUp = () => {
                 updateUser(`${firstName} ${lastName}`, photoUrl)
                 .then(() => toast.success('Successfully updated user profile'))
                 .catch(error => console.log(error))
+
+                // sending verification email
+                emailVerification()
+                .then(() => toast.success('Please check your inbox, to verify your email.'))
             })
             .catch(error => {
                 const errorMessage = error.message;
@@ -56,6 +60,20 @@ const SignUp = () => {
             })
 
     }
+
+    // handle google login
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            toast.success('Sign in successful!')
+            navigate('/')
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }   
 
     // handle email validation
     const handleEmail = (e) => {
@@ -136,7 +154,7 @@ const SignUp = () => {
                             <FaFacebook className='text-xl mr-3' />
                             Sign in with Facebook
                         </button>
-                        <button type="button" className="w-full text-white bg-[#4285F4] hover:bg-[#4285F4]/90 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex justify-center items-center mr-2">
+                        <button onClick={handleGoogleLogin} type="button" className="w-full text-white bg-[#4285F4] hover:bg-[#4285F4]/90 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex justify-center items-center mr-2">
                             <FaGoogle className='text-xl mr-3' />
                             Sign in with Google
                         </button>

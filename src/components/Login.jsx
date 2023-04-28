@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast';
 
 const Login = () => {
     const [email, setEmail] = useState('')
-    const {signIn, passwordReset} = useContext(AuthContext)
+    const {signIn, passwordReset, googleLogin} = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSignIn = (event) => {
@@ -21,7 +21,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser)
-            toast.success('Login successful!!')
+            toast.success('Login successful!')
             form.reset()
             navigate('/')
         })
@@ -38,6 +38,20 @@ const Login = () => {
         else{
             toast.error('Please give your email address in order to reset your password!')
         }
+    }
+
+    // handle google login
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            toast.success('Sign in successful!')
+            navigate('/')
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     return (
@@ -65,7 +79,7 @@ const Login = () => {
                             <FaFacebook className='text-xl mr-3' />
                             Sign in with Facebook
                         </button>
-                        <button type="button" className="w-full text-white bg-[#4285F4] hover:bg-[#4285F4]/90 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex justify-center items-center mr-2">
+                        <button onClick={handleGoogleLogin} type="button" className="w-full text-white bg-[#4285F4] hover:bg-[#4285F4]/90 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex justify-center items-center mr-2">
                             <FaGoogle className='text-xl mr-3' />
                             Sign in with Google
                         </button>

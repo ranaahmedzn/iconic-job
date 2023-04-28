@@ -10,7 +10,7 @@ const Header = () => {
 
   const handleSignOut = () => {
     logOut()
-      .then(() => toast.success('Successfully sign out!!'))
+      .then(() => toast.success('Successfully sign out!'))
       .catch(error => console.log(error))
   }
 
