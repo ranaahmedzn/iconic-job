@@ -2,10 +2,17 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { user } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext)
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => toast.success('Successfully sign out!!'))
+      .catch(error => console.log(error))
+  }
 
   return (
     <div className='w-full bg-gray-100'>
@@ -35,10 +42,10 @@ const Header = () => {
         </ul>
         {
           user ? <div className='flex items-center gap-3'>
-          <button className='btn-primary py-2.5'>Logout</button>
-          <img className='w-[60px] rounded-full ring-2' src={user?.photoURL} alt="" />
-        </div>
-        : <Link to='/login'><button className='btn-primary py-2'>Login</button></Link>
+            <button onClick={handleSignOut} className='btn-primary py-2.5'>Logout</button>
+            <img className='w-[60px] rounded-full ring-2' src={user?.photoURL} alt="" />
+          </div>
+            : <Link to='/login'><button className='btn-primary py-2'>Login</button></Link>
         }
       </div>
 
@@ -77,7 +84,13 @@ const Header = () => {
               : ""
           }>Blog</NavLink></li>
           <li>
-            <button className='btn-primary py-3'>Start Applying</button>
+            {
+              user ? <div className='flex items-center gap-3'>
+                <button onClick={handleSignOut} className='btn-primary py-2.5'>Logout</button>
+                <img className='w-[60px] rounded-full ring-2' src={user?.photoURL} alt="" />
+              </div>
+                : <Link to='/login'><button className='btn-primary py-2'>Login</button></Link>
+            }
           </li>
         </ul>
 
