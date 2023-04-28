@@ -6,6 +6,7 @@ import AppliedJob from './AppliedJob';
 
 const AppliedJobPage = () => {
     const [jobs, setJobs] = useContext(JobsContext)
+    const [appliedJobs, setAppliedJobs] = useState(jobs)
 
     const [selectedValue, setSelectedValue] = useState("");
 
@@ -14,8 +15,13 @@ const AppliedJobPage = () => {
         setSelectedValue(value);
 
         // Filter the jobs array based on the selected value
-        const filteredJobs = jobs.filter(job => job.job_type === value);
-        setJobs(filteredJobs);
+        if( value === "Filter"){
+            setAppliedJobs(jobs)
+        }
+        else{
+            const filteredJobs = jobs.filter(job => job.job_type === value);
+            setAppliedJobs(filteredJobs);
+        }
     }
 
     return (
@@ -32,7 +38,7 @@ const AppliedJobPage = () => {
                 <div className='flex justify-end'>
                                     
                     <select onChange={handleFilterByJobType} value={selectedValue} className="bg-gray-50 border border-gray-300 font-bold text-base text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 w-fit p-3">
-                        <option value="">Filter By</option>
+                        <option value="Filter">Filter By</option>
                         <option value="Remote">Remote</option>
                         <option value="Onsite">Onsite</option>
                     </select>
@@ -40,14 +46,14 @@ const AppliedJobPage = () => {
                 </div>
                 <div className='space-y-6 my-6'>
                     {
-                        jobs.map(job => <AppliedJob
+                        appliedJobs.map(job => <AppliedJob
                         key={job.id}
                         job={job}
                         ></AppliedJob>)
                     }
                 </div>
                 {
-                    jobs.length > 0 ? ""
+                    appliedJobs.length > 0 ? ""
                     : <h3 className='text-center font-bold text-3xl'>There is no Applied Job!!</h3>
                 }
             </div>
