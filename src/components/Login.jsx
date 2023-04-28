@@ -1,20 +1,57 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const {signIn, passwordReset} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleSignIn = (event) => {
+        event.preventDefault()
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(email, password)
+
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            toast.success('Login successful!!')
+            form.reset()
+            navigate('/')
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    const handlePasswordReset = () => {
+        if(email){
+            passwordReset(email)
+            .then(() => toast.success('Please check your email for resetting your password.'))
+        }
+        else{
+            toast.error('Please give your email address in order to reset your password!')
+        }
+    }
+
     return (
         <div className='min-h-screen flex justify-center items-center bg-gradient-to-r from-violet-500 to-indigo-500'>
             <div className='bg-white w-2/6 rounded-lg p-8'>
                 <h2 className='text-center font-bold text-3xl mb-8'>Login</h2>
-                <form>
+                <form onSubmit={handleSignIn}>
                     <div className="mb-6">
-                        <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Email address" required />
+                        <input onChange={(e) => setEmail(e.target.value)} type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Email address" required />
                     </div>
                     <div className="mb-2">
                         <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder='Password' required />
                     </div>
-                    <p className='mb-4 text-sm text-blue-600 font-semibold cursor-pointer w-fit'>Forgot password?</p>
+                    <p onClick={handlePasswordReset} className='mb-4 text-sm text-blue-600 font-semibold cursor-pointer w-fit'>Forgot password?</p>
                     <button type="submit" className="btn-primary py-3 w-full">Login</button>
 
                     <p className='text-center my-4 text-sm'>Don't have an account? <Link to="/signup" className='text-blue-600 font-semibold hover:underline'>Sing Up</Link></p>

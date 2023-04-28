@@ -43,7 +43,8 @@ const SignUp = () => {
                 form.reset()
                 setEmail('')
                 setPassword('')
-                
+
+                // update user profile 
                 updateUser(`${firstName} ${lastName}`, photoUrl)
                 .then(() => toast.success('Successfully updated user profile'))
                 .catch(error => console.log(error))
