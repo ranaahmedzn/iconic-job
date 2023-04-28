@@ -14,6 +14,8 @@ import AppliedJobPage from './components/AppliedJobPage';
 import ErrorPage from './components/ErrorPage';
 import Statistics from './components/Statistics';
 import Blog from './components/BlogPage';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
         element: <Blog />
       }
     ]
+  },
+  {
+    path: 'login',
+    element: <Login />
+  },
+  {
+    path: 'signup',
+    element: <SignUp />
   }
 ])
 

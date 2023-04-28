@@ -31,7 +31,7 @@ const Header = () => {
                         : ""
                     }>Blog</NavLink></li>
                 </ul>
-                <button className='btn-primary py-3'>Start Applying</button>
+                <button className='btn-primary py-3'>Login</button>
             </div>
 
             <div className='lg:hidden relative h-[75px] px-3 flex justify-between items-center'>
