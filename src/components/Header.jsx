@@ -3,15 +3,20 @@ import { Link, NavLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../providers/AuthProvider';
 import { toast } from 'react-hot-toast';
+import Loading from './Loading';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { user, logOut } = useContext(AuthContext)
+  const { user, logOut, loader } = useContext(AuthContext)
 
   const handleSignOut = () => {
     logOut()
       .then(() => toast.success('Successfully sign out!'))
       .catch(error => console.log(error))
+  }
+  
+  if(loader){
+    return <Loading></Loading>
   }
 
   return (
